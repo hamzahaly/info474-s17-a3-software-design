@@ -10,8 +10,11 @@ $(function() {
 
     console.log(nestedData);
 
+    // d3.select('#viz').datum([nestedData]).call(bubble);
+    var allData = [nestedData];
+    
     var charts = d3.select('#viz').selectAll('.chart')
-        .data(nestedData);
+        .data(allData);
 
     charts.enter().append('div')
         .attr('class', 'chart')

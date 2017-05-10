@@ -3,12 +3,16 @@ var Bubble = function() {
     var height = 700;
     var width = 700;
     var radius = 1;
+    var colors;
+    var circleData;
+    var text;
     var margin = {
         left: 70,
         bottom: 50,
         top: 30,
         right: 10
     };
+    var hovers;
 
     //Chart function to return
     var chart = function(selection) {
@@ -20,9 +24,7 @@ var Bubble = function() {
         .padding(1.5);
 
         selection.each(function(data) {
-            var nestedData = data.values;
-
-            console.log(nestedData);
+            var nestedData = data;
 
             var root = d3.hierarchy({
                 values: nestedData
@@ -30,22 +32,23 @@ var Bubble = function() {
                 return d.values;
             });
 
-            console.log(root);
-
             root.sum(function(d) {
-                return +d.Calories;
+                return +d[circleData];
             });
 
-            // var categories = nestedData.map(function(d) {
-            //     return d.key;
-            // });
+            //d['calories']
+            //d[sizeVar]
+            //sizeVar = "value"
 
-            //var colorScale = d3.scaleOrdinal().range(d3.schemeCategory10);
+            var categories = nestedData.map(function(d) {
+                return d.key;
+            });
+
+            var colorScale = d3.scaleOrdinal().domain(categories).range(d3.schemeCategory10);
 
             //SVG element to draw things in
             var svg = d3.select(this).selectAll('.chart')
                 .data([nestedData]);
-
 
             //Setting attrs for the svg element to display viz in
             var svgEnter = svg.enter()
@@ -67,7 +70,9 @@ var Bubble = function() {
                     return d.r;
                 })
                 //Need to change the fill color
-                .attr('fill', 'blue');
+                .attr('fill', function(d) {
+                    return colorScale(d.data.Category);
+                });
 
             node.exit().remove();
         });
@@ -90,6 +95,30 @@ var Bubble = function() {
         radius = value;
         return chart;
     };
+
+    chart.colors = function(value) {
+        if (!arguments.length) return colors;
+        //Logic for determining colors for the color scale
+        return chart;
+    };
+
+    chart.circleData = function(value) {
+        if (!arguments.length) return circleData;
+        //Logic for determining which piece of data to use root.sum on
+        return chart;
+    };
+
+    chart.text = function(value) {
+        if (!arguments.length) return text;
+        //Logic for deciding what kinds of text goes in the bubbles of the bubble chart
+        return chart;
+    };
+
+    chart.hovers = function(value) {
+        if (!arguments.length) return hovers;
+        //logic for determing what goes into hovers and/or hovers exist.
+        return chart;
+    }
 
     return chart;
 };
