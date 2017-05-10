@@ -2,6 +2,7 @@ var Bubble = function() {
     //Set default values
     var height = 700;
     var width = 700;
+    var radius = 1;
     var margin = {
         left: 70,
         bottom: 50,
@@ -65,6 +66,7 @@ var Bubble = function() {
                 .attr('r', function(d) {
                     return d.r;
                 })
+                //Need to change the fill color
                 .attr('fill', 'blue');
 
             node.exit().remove();
@@ -80,6 +82,12 @@ var Bubble = function() {
     chart.width = function(value) {
         if (!arguments.length) return width;
         width = value;
+        return chart;
+    };
+
+    chart.radius = function(value) {
+        if (!arguments.length) return radius;
+        radius = value;
         return chart;
     };
 

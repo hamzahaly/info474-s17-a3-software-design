@@ -11,7 +11,7 @@ $(function() {
     console.log(nestedData);
 
     var charts = d3.select('#viz').selectAll('.chart')
-        .datum([nestedData]);
+        .data(nestedData);
 
     charts.enter().append('div')
         .attr('class', 'chart')
@@ -72,5 +72,5 @@ $(function() {
 
     //Call draw function
 });
-})
+});
 
