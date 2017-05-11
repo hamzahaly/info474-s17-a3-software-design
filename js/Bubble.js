@@ -126,24 +126,24 @@ var Bubble = function() {
     };
 
     //Pass in an arrary of values to set a color scale that uses the d3.schemeCategory10 function
-    chart.colors = function(value) {
+    chart.colors = function(array) {
         if (!arguments.length) return colors;
-        colors = value;
+        colors = array;
         colorScale = d3.scaleOrdinal().domain(colors).range(d3.schemeCategory10);
         return chart;
     };
 
     //Pass in a property of the data in string format to associate colors based on the property chosen 
-    chart.colorInput = function(value) {
+    chart.colorInput = function(string) {
         if (!arguments.length) return colorScale;
-        colorInput = value;
+        colorInput = string;
         return chart;
     };
 
     //Pass in a property of the data in string format to 
-    chart.circleData = function(value) {
+    chart.circleData = function(string) {
         if (!arguments.length) return circleData;
-        circleData = value;
+        circleData = string;
         return chart;
     };
 
