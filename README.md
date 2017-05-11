@@ -12,7 +12,7 @@ Methods
 * bubble.colors
 * bubble.colorInput
 * bubble.circleData
-* bubble.hovers
+* [bubble.hovers](#bubble.hovers)
 
 bubble.height
 ======
