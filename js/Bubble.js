@@ -6,7 +6,6 @@ var Bubble = function() {
     var colorScale = d3.scaleOrdinal().range(d3.schemeCategory10);
     var colorInput;
     var circleData;
-    var text = null;
     var margin = {
         left: 70,
         bottom: 50,
@@ -100,15 +99,6 @@ var Bubble = function() {
                         return tooltip.style("visibility", "hidden");
                     });
             };    
-                
-            //Append text
-            if (text != null) {
-                node.append("text")
-                    .attr("dy", ".3em")
-                    .style("text-anchor", "middle")
-                    .style("pointer-events", "none")
-                    .text(function(d) { return d.className.substring(0, d.r / 3); });
-            };
             
             node.exit().remove();
         });
@@ -138,7 +128,6 @@ var Bubble = function() {
     //Pass in an arrary of values to set a color scale that uses the d3.schemeCategory10 function
     chart.colors = function(value) {
         if (!arguments.length) return colors;
-        //Logic for determining colors for the color scale
         colors = value;
         colorScale = d3.scaleOrdinal().domain(colors).range(d3.schemeCategory10);
         return chart;
@@ -158,18 +147,9 @@ var Bubble = function() {
         return chart;
     };
 
-    //Pass in a property of the data in string format to display text on each circle in the chart
-    chart.text = function(value) {
-        if (!arguments.length) return text;
-        //Logic for deciding what kinds of text goes in the bubbles of the bubble chart
-        text = value;
-        return chart;
-    };
-
     //Pass true or false to enable hovers on the chart
     chart.hovers = function(bool, label, unit) {
         if (!arguments.length) return hovers;
-        //logic for determing what goes into hovers and/or hovers exist.
         hovers = bool;
         hoverLabel = label;
         hoverUnit = unit

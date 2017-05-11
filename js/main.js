@@ -15,7 +15,6 @@ $(function() {
         return d.key;
     });
 
-
     bubble.colors(categories);
 
     bubble.colorInput('Category');
