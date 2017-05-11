@@ -10,8 +10,8 @@ Methods
 * [bubble.width](#bubblewidth)
 * [bubble.radius](#bubbleradius)
 * [bubble.colors](#bubblecolors)
-* [bubble.colorInput](#bubblecolorInput)
-* [bubble.circleData](#bubblecircleData)
+* [bubble.colorInput](#bubblecolorinput)
+* [bubble.circleData](#bubblecircledata)
 * [bubble.hovers](#bubblehovers)
 
 bubble.height
