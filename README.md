@@ -6,7 +6,7 @@ This API reference will help you create Bubble Charts with ease using simple met
 Methods
 ======
 
-* bubble.height
+* [bubble.height](#bubble.height)
 * bubble.width
 * bubble.radius
 * bubble.colors
