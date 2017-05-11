@@ -2,17 +2,27 @@ $(function() {
     d3.csv('data/menu.csv', function(error, data) {
     var bubble = Bubble().width(560).height(900);
 
+    bubble.circleData('Calories');
+    bubble.hovers(true, 'Item', 'Calories');
+
     var nestedData = d3.nest()
         .key(function(d) {
             return d.Category;
         })
         .entries(data);
 
-    console.log(nestedData);
+    var categories = nestedData.map(function(d) {
+        return d.key;
+    });
+
+
+    bubble.colors(categories);
+
+    bubble.colorInput('Category');
 
     // d3.select('#viz').datum([nestedData]).call(bubble);
     var allData = [nestedData];
-    
+
     var charts = d3.select('#viz').selectAll('.chart')
         .data(allData);
 
@@ -31,8 +41,6 @@ $(function() {
     // .append('svg')
     // .attr('width', width)
     // .attr('height', height);
-
-
 
     // var root = d3.hierarchy({
     //     values: nestedData
