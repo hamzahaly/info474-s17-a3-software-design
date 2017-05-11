@@ -47,18 +47,18 @@ bubble.colorInput
 Neccessary to determine how the colors will be displayed in the bubble chart.
 * bubble.**colorInput**(string)
 
-Needs to take a property of your dataset that specifies how the colors should be bound to your data. 
+Takes in a string value. Needs to take a property of your dataset that specifies how the colors should be bound to your data. 
 
 bubble.circleData
 ======
 Determines how to size and place the circles based on the parameter provided.
 * bubble.**circleData**(string)
 
-Needs to take a property of your dataset that specifies what data the circles should represent. 
+Takes in a string value. Needs to take a property of your dataset that specifies what data the circles should represent. 
 
 bubble.hovers
 ======
 Allows hovers to show up on the bubble chart
 * bubble.**hovers**(bool, label, unit)
 
-A boolean value to determine whether to show hovers on the circles or not. 
+Takes in boolean value. Determines whether to show hovers on the circles or not. 
