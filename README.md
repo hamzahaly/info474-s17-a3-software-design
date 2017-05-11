@@ -16,28 +16,28 @@ Methods
 
 bubble.height
 ======
-## Sets the height of the bubble chart
+Sets the height of the bubble chart
 
 bubble.width
 ======
-## Sets the width of the bubble chart
+Sets the width of the bubble chart
 
 bubble.radius
 ======
-## Sets the radius of the cirlces in the bubble chart
+Sets the radius of the cirlces in the bubble chart
 
 bubble.colors
 ======
-## Sets the colors of the circles in the bubble chart
+Sets the colors of the circles in the bubble chart
 
 bubble.colorInput
 ======
-## Determines which colors will correspond to which data piece given
+Determines which colors will correspond to which data piece given
 
 bubble.circleData
 ======
-## Determines how to the size and place the circles based on the parameter provided
+Determines how to the size and place the circles based on the parameter provided
 
 bubble.hovers
 ======
-## Allows hovers to show up on the bubble chart
+Allows hovers to show up on the bubble chart
